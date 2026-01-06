@@ -499,6 +499,12 @@ input[type="file"] {
     padding: 0 10px;
   }
 
+  .app-header {
+    margin-bottom: 2rem;
+    padding-top: 80px;
+    /* Space for the fixed settings button */
+  }
+
   .app-header h1 {
     font-size: 1.25rem;
   }
@@ -550,6 +556,20 @@ input[type="file"] {
 
   .scorecard-label {
     font-size: 0.75rem;
+  }
+
+  .scorecard-row-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -10px;
+    /* Bleed to edges on mobile */
+    padding: 0 10px;
+  }
+
+  .scorecard-grid {
+    min-width: 450px;
+    /* Ensure it stays wide enough to scroll */
+    width: 100%;
   }
 
   .cell {

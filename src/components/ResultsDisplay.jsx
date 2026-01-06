@@ -7,38 +7,40 @@ const ScorecardRow = ({ holes, label, type }) => {
     const totalScore = holes.reduce((acc, h) => acc + h.score, 0);
 
     return (
-        <div className="scorecard-row-container">
+        <div className="scorecard-row-wrapper">
             <div className="scorecard-label">{label}</div>
-            <div className="scorecard-grid">
-                {/* Header Row */}
-                <div className="grid-row header">
-                    <div className="cell label-cell">Hole</div>
-                    {holes.map(h => <div key={h.hole} className="cell">{h.hole}</div>)}
-                    <div className="cell total-cell">Tot</div>
-                </div>
-                {/* Par Row */}
-                <div className="grid-row">
-                    <div className="cell label-cell">Par</div>
-                    {holes.map(h => <div key={h.hole} className="cell">{h.par}</div>)}
-                    <div className="cell total-cell">{totalPar}</div>
-                </div>
-                {/* Score Row */}
-                <div className="grid-row">
-                    <div className="cell label-cell">Score</div>
-                    {holes.map(h => {
-                        const diff = h.score - h.par;
-                        let className = "cell score-cell";
-                        if (diff < 0) className += " under-par"; // Birdie+
-                        if (diff > 0) className += " over-par";  // Bogey
-                        if (diff >= 2) className += " double-over"; // Double+
+            <div className="scorecard-row-container">
+                <div className="scorecard-grid">
+                    {/* Header Row */}
+                    <div className="grid-row header">
+                        <div className="cell label-cell">Hole</div>
+                        {holes.map(h => <div key={h.hole} className="cell">{h.hole}</div>)}
+                        <div className="cell total-cell">Tot</div>
+                    </div>
+                    {/* Par Row */}
+                    <div className="grid-row">
+                        <div className="cell label-cell">Par</div>
+                        {holes.map(h => <div key={h.hole} className="cell">{h.par}</div>)}
+                        <div className="cell total-cell">{totalPar}</div>
+                    </div>
+                    {/* Score Row */}
+                    <div className="grid-row">
+                        <div className="cell label-cell">Score</div>
+                        {holes.map(h => {
+                            const diff = h.score - h.par;
+                            let className = "cell score-cell";
+                            if (diff < 0) className += " under-par"; // Birdie+
+                            if (diff > 0) className += " over-par";  // Bogey
+                            if (diff >= 2) className += " double-over"; // Double+
 
-                        return (
-                            <div key={h.hole} className={className}>
-                                <span className="score-value">{h.score}</span>
-                            </div>
-                        );
-                    })}
-                    <div className="cell total-cell">{totalScore}</div>
+                            return (
+                                <div key={h.hole} className={className}>
+                                    <span className="score-value">{h.score}</span>
+                                </div>
+                            );
+                        })}
+                        <div className="cell total-cell">{totalScore}</div>
+                    </div>
                 </div>
             </div>
         </div>
