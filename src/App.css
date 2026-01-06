@@ -211,6 +211,8 @@ input[type="file"] {
   border-radius: 8px;
   margin: 1rem 0;
   box-sizing: border-box;
+  font-size: 16px;
+  /* Prevents auto-zoom on iOS */
 }
 
 .api-input:focus {
