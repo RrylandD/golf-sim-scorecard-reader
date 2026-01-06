@@ -2,6 +2,8 @@
 
 A modern React application that uses Google Gemini AI (Vision) to extract golf scores from Trackman scorecard photos and calculate analytics.
 
+https://github.com/user-attachments/assets/edf3c327-b10f-4bb2-be79-f794f56e34b6
+
 ## Features
 
 - **AI-Powered OCR**: Uses Gemini 2.0/1.5 Flash to accurately parse complex scorecard grids.
